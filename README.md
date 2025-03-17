@@ -15,8 +15,8 @@
 
 
 <div align="center">
-<a href="https://github.com/sail-sg/TreeMeshGPT"><img src="https://img.shields.io/badge/arXiv-2302.16911-blue?"></a> &nbsp;&nbsp;
- <a href="https://github.com/sail-sg/TreeMeshGPT"><img src="https://img.shields.io/badge/Paper-📖-blue?"></a> &nbsp;&nbsp;
+<a href="https://arxiv.org/abs/2503.11629"><img src="https://img.shields.io/badge/arXiv-2503.11629-blue?"></a> &nbsp;&nbsp;
+ <a href="https://arxiv.org/pdf/2503.11629"><img src="https://img.shields.io/badge/Paper-📖-blue?"></a> &nbsp;&nbsp;
 <a href="https://colab.research.google.com/drive/1UuYwl_GzkVmvcSReyqueMpOIsqr2u3cG?usp=sharing"><img src="https://img.shields.io/badge/Demo-Colab-F9AB00?logo=googlecolab&logoColor=yellow"></a>
 </div>
 
