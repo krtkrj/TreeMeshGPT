@@ -45,7 +45,7 @@ TreeMeshGPT is an autoregressive Transformer designed to generate high-quality a
       <a href="#-inference">Inference</a>
     </li>
     <li>
-      <a href="#-training">Training</a>
+      <a href="#%EF%B8%8F-training">Training</a>
     </li>
     <li>
       <a href="#acknowledgement">Acknowledgement</a>
