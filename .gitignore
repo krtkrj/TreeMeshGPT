@@ -3,6 +3,5 @@ wandb/
 *.pt
 *.mtl
 *.pyc
-*.pkl
 *.ply
 .vscode/

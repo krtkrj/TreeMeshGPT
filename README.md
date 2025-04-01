@@ -45,7 +45,13 @@ TreeMeshGPT is an autoregressive Transformer designed to generate high-quality a
       <a href="#-inference">Inference</a>
     </li>
     <li>
+      <a href="#-training">Training</a>
+    </li>
+    <li>
       <a href="#acknowledgement">Acknowledgement</a>
+    </li>
+        <li>
+      <a href="#citation">Citation</a>
     </li>
   </ol>
 </details>
@@ -55,8 +61,7 @@ TreeMeshGPT is an autoregressive Transformer designed to generate high-quality a
 - [x] [Google Colab demo](https://colab.research.google.com/drive/1UuYwl_GzkVmvcSReyqueMpOIsqr2u3cG?usp=sharing) – Run TreeMeshGPT in your browser.
 - [x] Inference - Generate artistic mesh conditioned on point cloud sampled from dense mesh (`inference.py`)
 - [x] Tokenizer - Create input-output pair for Autoregressive Tree Sequencing (`tokenizer.py`)
-- [ ] Training script
-- [ ] Dataset
+- [x] Training script - Training script with dummy data
 
 
 ## 🚀 Getting Started
@@ -150,6 +155,30 @@ The output will be saved to `generation` folder.
     python inference.py --decimation False --mesh_path demo/objaverse_pig.obj
     ```
 
+## 🛠️ Training
+
+We provide training script with dummy data. First install wandb:
+
+```
+pip install wandb
+```
+
+The dummy data is located in `dummy_data/mesh`. We launch separate multiple processes to keep augmenting the data by running:
+
+```
+python train_create_pkl.py
+```
+
+This script will create `.pkl` files to be loaded into training dataloader.
+
+To train the model, launch:
+
+```
+accelerate launch --mixed_precision=fp16 train.py
+```
+
+**Note:** This script only works with batch size 1. Adjust `MESH_IN` and `PKL_OUT` in `train_create_pkl.py` as well as `TRAIN_PATH` and `VAL_PATH` in `train.py` to your own.
+
 
 ## Acknowledgement
 Our code is built on top of [PivotMesh](https://github.com/whaohan/pivotmesh) codebase. Our work is also inspired by these projects:
@@ -158,3 +187,15 @@ Our code is built on top of [PivotMesh](https://github.com/whaohan/pivotmesh) co
 - [MeshAnythingV2](https://buaacyw.github.io/meshanything-v2/)  
 - [MeshXL](https://meshxl.github.io/)  
 - [MeshGPT](https://nihalsid.github.io/mesh-gpt/)  
+
+## Citation
+If you find our code or paper useful, please consider citing us:
+
+```bibtex
+@article{lionar2025treemeshgpt,
+  title={TreeMeshGPT: Artistic Mesh Generation with Autoregressive Tree Sequencing},
+  author={Lionar, Stefan and Liang, Jiabin and Lee, Gim Hee},
+  journal={arXiv preprint arXiv:2503.11629},
+  year={2025}
+}
+```
