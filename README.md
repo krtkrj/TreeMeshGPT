@@ -157,19 +157,23 @@ The output will be saved to `generation` folder.
 
 ## 🛠️ Training
 
-We provide training script with dummy data. First install wandb:
+We provide training script with dummy data. First, install wandb:
 
 ```
 pip install wandb
 ```
 
-The dummy data is located in `dummy_data/mesh`. We launch separate multiple processes to keep augmenting the data by running:
+The dummy data is located in `dummy_data/mesh`. To further help getting started, we also provide the subset of our dataset with less than 500 faces used for the tokenization effectiveness experiment in our paper. The dataset can be downloaded here:
+
+📦 [mesh_500.zip](https://drive.usercontent.google.com/download?id=1szbNQa6vQlRemUoAt9UFQKRRtnn_RwaW&export=download).
+
+Launch the script below and keep it running in separate process to apply data augmentation and tokenize the meshes. This script will create `.pkl` files to be loaded into training dataloader.
 
 ```
 python train_create_pkl.py
 ```
 
-This script will create `.pkl` files to be loaded into training dataloader.
+Ideally, iterating through the entire dataset in `train_create_pkl.py` should be as fast as, or faster than, a single training epoch. To ensure this, consider running multiple instances of the script in parallel—each handling a different subset of the data—or implementing a custom queue-based pipeline to process meshes immediately after they are loaded during training.
 
 To train the model, launch:
 
