@@ -330,8 +330,4 @@ class TreeMeshGPT(Module):
         return (rotated_faces == cur_face).all(dim=(1, 2)).any()
     
     def adjust_temperature(self, stack_size):
-        if stack_size < 10:
-            return 0.7
-        elif stack_size < 100:
-            return 0.5
-        return 0.2
+        return 0.0001
