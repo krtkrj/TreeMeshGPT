@@ -298,4 +298,4 @@ class TreeMeshGPT(Module):
 
     # constant safe temperature ---------------------------------------
     def adjust_temperature(self, stack_size: int):
-        return 0.5
+        return 0.2
